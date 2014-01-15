@@ -190,7 +190,7 @@ Rotten.prototype.inTheaters = function(opt, cb) {
         }
     }
     
-    _handle.call(this, "inTheaters", null, cb);
+    _handle.call(this, "inTheaters", opt, cb);
 };
 
 /**
@@ -211,7 +211,7 @@ Rotten.prototype.opening = function(opt, cb) {
         } 
     }
     
-    _handle.call(this, "opening", null, cb);
+    _handle.call(this, "opening", opt, cb);
 };
 
 /**
@@ -232,7 +232,7 @@ Rotten.prototype.upcoming = function(opt, cb) {
             opt = {"limit": opt};
         } 
     }
-    _handle.call(this, "upcoming", null, cb);
+    _handle.call(this, "upcoming", opt, cb);
 };
 
 /**
