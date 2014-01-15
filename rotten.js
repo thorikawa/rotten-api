@@ -204,11 +204,13 @@ Rotten.prototype.opening = function(opt, cb) {
         cb = opt;
         opt = null;
     } else {
-        if (typeof opt === 'string') { 
+        if (typeof opt === 'string') {
             opt = {"country": opt};
         } else if (typeof opt === 'number') {
-            opt = {"limit": opt};
-        } 
+            opt = {"page_limit": opt};
+        } else {
+            opt.page_limit = opt ? (opt.limit || opt.page_limit || this.limit) : this.limit;
+        }
     }
     
     _handle.call(this, "opening", opt, cb);
@@ -226,11 +228,13 @@ Rotten.prototype.upcoming = function(opt, cb) {
         cb = opt;
         opt = null;
     } else {
-        if (typeof opt === 'string') { 
+        if (typeof opt === 'string') {
             opt = {"country": opt};
         } else if (typeof opt === 'number') {
-            opt = {"limit": opt};
-        } 
+            opt = {"page_limit": opt};
+        } else {
+            opt.page_limit = opt ? (opt.limit || opt.page_limit || this.limit) : this.limit;
+        }
     }
     _handle.call(this, "upcoming", opt, cb);
 };

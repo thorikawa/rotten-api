@@ -29,8 +29,9 @@ module.exports = {
         "url": "http://api.rottentomatoes.com/api/public/v1.0/lists/movies/opening.json",
         "params": function() {
             return {
-                "limit": LIMIT,
-                "country": "us"
+                "page": 1,
+                "country": "us",
+                "page_limit": LIMIT
             };
         }
     },
@@ -39,8 +40,9 @@ module.exports = {
         "url": "http://api.rottentomatoes.com/api/public/v1.0/lists/movies/upcoming.json",
         "params": function() {
             return {
-                "limit": LIMIT,
-                "country": "us"
+                "page": 1,
+                "country": "us",
+                "page_limit": LIMIT
             };
         }
     },
